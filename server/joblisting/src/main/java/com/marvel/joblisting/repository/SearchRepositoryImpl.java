@@ -31,6 +31,9 @@ public class SearchRepositoryImpl implements SearchRepository{
         MongoDatabase database = client.getDatabase("<mongodb_database>");
         MongoCollection<Document> collection = database.getCollection("<mongodb_collection>");
 
+        System.out.println("Connecting to MongoDB, database: " + database.getName());
+        System.out.println("Searching text: " + text);
+
         AggregateIterable<Document> result = collection.aggregate(Arrays.asList(new Document("$search",
                         new Document("text",
                                 new Document("query", text)

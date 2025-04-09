@@ -21,7 +21,7 @@ public class PostController {
     @GetMapping("/")
     @CrossOrigin
     public String home() {
-        return "Welcome to JobListingApp";
+        return "Welcome to Joblisting";
     }
 
     @GetMapping("/allPosts")
